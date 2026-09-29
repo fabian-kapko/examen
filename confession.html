@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formula spovede a zoznam hriechov - Examen</title>
+<meta name="description" content="Formula svätej spovede s automaticky doplneným dátumom poslednej spovede a so zoznamom hriechov, ktoré ste si zaškrtli.">
+<link rel="canonical" href="https://spovednezrkadlo.sk/confession.html">
+<link rel="alternate" hreflang="sk" href="https://spovednezrkadlo.sk/confession.html">
+<link rel="alternate" hreflang="en" href="https://spovednezrkadlo.sk/confession.html?lang=en">
+<link rel="alternate" hreflang="de" href="https://spovednezrkadlo.sk/confession.html?lang=de">
+<link rel="alternate" hreflang="x-default" href="https://spovednezrkadlo.sk/confession.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Examen">
+<meta property="og:locale" content="sk_SK">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:title" content="Formula spovede a zoznam hriechov - Examen">
+<meta property="og:description" content="Formula svätej spovede s automaticky doplneným dátumom poslednej spovede a so zoznamom hriechov, ktoré ste si zaškrtli.">
+<meta property="og:url" content="https://spovednezrkadlo.sk/confession.html">
+<meta property="og:image" content="https://spovednezrkadlo.sk/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="confession">
+
+  <header>
+    <div class="wrap">
+      <div class="bar">
+        <a class="brand" href="index.html" data-i18n="app.name">Examen</a>
+        <select id="lang" aria-label="Language"></select>
+      </div>
+      <nav>
+        <a href="index.html" data-i18n="nav.index">Spytovanie</a>
+        <a href="confession.html" class="active" data-i18n="nav.confession">Spoveď</a>
+        <a href="prayers.html" data-i18n="nav.prayers">Modlitby</a>
+        <a href="contact.html" data-i18n="nav.contact">Info</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1 data-i18n="confession.heading">Formula spovede</h1>
+    <p class="lead" data-i18n="confession.intro">Zoznam hriechov, ktoré ste zaškrtli pri spytovaní svedomia. Nič sa nikam neodosiela, všetko zostáva vo vašom prehliadači.</p>
+
+    <p id="error" class="note" hidden></p>
+
+    <p class="formula" id="opening" data-i18n="confession.opening">Spovedám sa Pánu Bohu i vám duchovný otče, že som od poslednej svätej spovede ktorá bola {ago} spáchal tieto hriechy:</p>
+    <p class="note" id="since"></p>
+
+    <ol class="sins" id="sins"></ol>
+    <p class="note" id="none" hidden></p>
+
+    <p class="formula" data-i18n="confession.closing">Na viac hriechov si nepamätám.</p>
+
+    <section class="prayer">
+      <h2 data-i18n="confession.contrition.heading">Modlitba ľútosti</h2>
+      <p class="formula" data-i18n="confession.contrition">Bože môj, celým srdcom ťa chcem milovať, a preto veľmi ľutujem, že som ťa hriechmi urazil. Chcem sa naozaj polepšiť a hriechu sa chrániť. Bože Otče, odpusť mi pre krv Kristovu.</p>
+    </section>
+
+    <div class="actions">
+      <button type="button" id="reset" data-i18n="questions.reset">Reset</button>
+    </div>
+
+    <p class="go">
+      <a class="go-link" href="index.html" data-i18n="confession.back">Späť na spytovanie svedomia</a>
+    </p>
+
+    <footer>
+      <p data-i18n="footer.note">Neprešlo cenzúrou, korektúrou, použitie na vlastnú zodpovednosť. Pri zistení chýb, zlepšení, prosím, napíšte email uvedený v sekcii info/správca stránky (klik).</p>
+    </footer>
+  </main>
+
+<noscript>
+  <p class="note">Táto stránka potrebuje JavaScript, aby načítala otázky a modlitby.</p>
+</noscript>
+
+<script src="app.js"></script>
+</body>
+</html>

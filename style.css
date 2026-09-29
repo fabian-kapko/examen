@@ -1,0 +1,260 @@
+/* Black & white, minimal. */
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #000;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.wrap {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0 1rem 4rem;
+}
+
+/* Header */
+
+header {
+  border-bottom: 2px solid #000;
+  margin-bottom: 1.5rem;
+}
+
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 1rem 0 0.5rem;
+}
+
+.brand {
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000;
+}
+
+select {
+  font: inherit;
+  font-size: 0.9rem;
+  color: #000;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 0;
+  padding: 0.4rem 0.5rem;
+  min-height: 2.5rem;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.25rem;
+  padding-bottom: 0.75rem;
+}
+
+nav a {
+  color: #000;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  min-height: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover { border-bottom-color: #000; }
+nav a.active { border-bottom-color: #000; font-weight: bold; }
+
+/* Text */
+
+h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; }
+h2 { font-size: 1.15rem; margin: 2rem 0 0.25rem; }
+p { margin: 0.5rem 0 1rem; }
+
+.lead { margin-bottom: 2rem; }
+
+hr {
+  border: 0;
+  border-top: 1px solid #000;
+  margin: 2rem 0;
+}
+
+a { color: #000; }
+
+/* Controls */
+
+.controls {
+  border: 1px solid #000;
+  padding: 0.5rem 1rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1rem 0 0;
+}
+
+.field label {
+  flex: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+input[type="date"] {
+  font: inherit;
+  font-size: 0.9rem;
+  color: #000;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 0;
+  padding: 0.4rem 0.5rem;
+  min-height: 2.5rem;
+}
+
+.controls .note { margin: 0.75rem 0 0; }
+
+/* Questions */
+
+.qgroup h2 {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 2.5rem 0 0.5rem;
+}
+
+.qgroup:first-child h2 { margin-top: 1rem; }
+
+ol.questions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #000;
+}
+
+ol.questions li { border-bottom: 1px solid #000; }
+
+ol.questions label {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.9rem 0.25rem;
+  cursor: pointer;
+  min-height: 3rem;
+}
+
+ol.questions input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0.25rem 0 0;
+  accent-color: #000;
+  flex: none;
+}
+
+.qtext { flex: 1; }
+
+input:checked ~ .qtext { text-decoration: line-through; }
+
+/* Buttons */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+button {
+  font: inherit;
+  color: #000;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 0;
+  padding: 0.6rem 1rem;
+  min-height: 2.75rem;
+  cursor: pointer;
+}
+
+button:hover { background: #000; color: #fff; }
+
+.count { font-size: 0.9rem; }
+
+/* Confession */
+
+.formula {
+  border-left: 2px solid #000;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+}
+
+ol.sins {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+ol.sins li { margin-bottom: 0.5rem; }
+
+.go { margin: 2rem 0; }
+
+.go-link {
+  display: inline-block;
+  border: 1px solid #000;
+  padding: 0.6rem 1rem;
+  min-height: 2.75rem;
+  text-decoration: none;
+}
+
+.go-link:hover { background: #000; color: #fff; }
+
+/* Prayers */
+
+.prayer { margin-bottom: 2.5rem; }
+.prayer p { white-space: pre-line; }
+
+.source {
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+/* Contact */
+
+dl.contact { margin: 0; }
+dl.contact dt {
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 1.25rem;
+}
+dl.contact dd { margin: 0.25rem 0 0; }
+dl.contact a {
+  display: inline-block;
+  padding: 0.4rem 0;
+  min-height: 2.5rem;
+}
+
+footer {
+  border-top: 1px solid #000;
+  margin-top: 3rem;
+  padding-top: 1rem;
+  font-size: 0.85rem;
+}
+
+.note { font-size: 0.85rem; }
+
+@media (max-width: 30rem) {
+  body { font-size: 16px; }
+}

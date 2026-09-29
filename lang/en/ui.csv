@@ -1,0 +1,42 @@
+key|value
+app.name|Examen
+nav.index|Examination
+nav.confession|Confession
+nav.prayers|Prayers
+nav.contact|Info
+title.index|Examination of conscience before confession
+title.confession|Confession formula and list of sins
+title.prayers|Prayers before confession
+title.contact|About this confession app
+desc.index|A comprehensive Catholic examination of conscience before holy confession. 125 questions; the sins you tick stay in your browser only.
+desc.confession|The confession formula with the date of your last confession filled in and the sins you ticked listed underneath.
+desc.prayers|The prayer before holy confession, for quick reference.
+desc.contact|Where to go to confession, contact for the site administrator, and the software licence.
+index.heading|Examination of conscience
+index.intro|A comprehensive Catholic examination of conscience compiled according to the Tractatus de sacramento poenitentiae. Note: confession online is never valid.
+index.goto|Continue to confession
+prayers.heading|Prayers (quick reference)
+prayers.intro|source:
+prayers.source|source:
+contact.heading|Info
+contact.intro|This confession window is not approved by any ecclesiastical authority and has not been censored. When the examination is generated no data is placed or stored on the server; it is readable solely from your browser's cookie, so once that is cleared the data is removed.
+questions.reset|Reset
+questions.count|{n} ticked
+footer.note|Not censored, not proofread, use at your own responsibility. If you find errors or have improvements, please write to the email given in the info section / site administrator (click).
+gender.label|Sex
+gender.choose|Choose
+gender.m|Male
+gender.f|Female
+last.label|Last confession
+last.none|Last confession not recorded
+last.since|{date} - {n} days
+last.clear|Clear
+confession.heading|Confession formula
+confession.intro|The sins you ticked in the examination of conscience. Nothing is sent anywhere, it all stays in your browser.
+confession.opening|I confess to the Lord God and to you, spiritual father, that since my last holy confession, which was {ago}, I have committed these sins:
+confession.nodate|(date not recorded)
+confession.closing|I do not remember any further sins.
+confession.contrition.heading|Act of contrition
+confession.contrition|My God, I want to love you with all my heart, and therefore I am deeply sorry that I have offended you by my sins. I truly want to amend my life and to keep myself from sin. God the Father, forgive me through the blood of Christ.
+confession.none|You have not ticked anything yet.
+confession.back|Back to the examination of conscience

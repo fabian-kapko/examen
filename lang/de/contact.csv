@@ -1,0 +1,4 @@
+id|type|label|value|href
+c01|link|Ort finden|Wo beichten?|https://www.dokostola.sk/?den=dnes&typ=spovede
+c03|email|Betreiber der Seite|F. Kapko|examen@kapko.eu
+c04|text|Softwarelizenz|GNU GENERAL PUBLIC LICENSE,Version 3, 29 June 2007|https://github.com/fabian-kapko/examen/blob/main/LICENSE

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://spovednezrkadlo.sk/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://spovednezrkadlo.sk/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spovednezrkadlo.sk/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spovednezrkadlo.sk/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spovednezrkadlo.sk/"/>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://spovednezrkadlo.sk/confession.html</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://spovednezrkadlo.sk/confession.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spovednezrkadlo.sk/confession.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spovednezrkadlo.sk/confession.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spovednezrkadlo.sk/confession.html"/>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://spovednezrkadlo.sk/prayers.html</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://spovednezrkadlo.sk/prayers.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spovednezrkadlo.sk/prayers.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spovednezrkadlo.sk/prayers.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spovednezrkadlo.sk/prayers.html"/>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://spovednezrkadlo.sk/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://spovednezrkadlo.sk/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://spovednezrkadlo.sk/contact.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://spovednezrkadlo.sk/contact.html?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://spovednezrkadlo.sk/contact.html"/>
+    <lastmod>2026-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+</urlset>

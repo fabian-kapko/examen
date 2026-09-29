@@ -1,0 +1,42 @@
+key|value
+app.name|Examen
+nav.index|Erforschung
+nav.confession|Beichte
+nav.prayers|Gebete
+nav.contact|Info
+title.index|Gewissenserforschung vor der Beichte
+title.confession|Beichtformel und Sündenliste
+title.prayers|Gebete vor der Beichte
+title.contact|Über diesen Beichtspiegel
+desc.index|Ausführliche katholische Gewissenserforschung vor der heiligen Beichte. 125 Fragen; die angekreuzten Sünden bleiben nur in Ihrem Browser.
+desc.confession|Die Beichtformel mit eingesetztem Datum der letzten Beichte und der Liste der angekreuzten Sünden.
+desc.prayers|Das Gebet vor der heiligen Beichte zum schnellen Nachschlagen.
+desc.contact|Wo man beichten kann, Kontakt zum Betreiber der Seite und die Softwarelizenz.
+index.heading|Gewissenserforschung
+index.intro|Eine ausführliche katholische Gewissenserforschung, zusammengestellt nach dem Tractatus de sacramento poenitentiae. Hinweis: Eine Beichte online ist niemals gültig.
+index.goto|Weiter zur Beichte
+prayers.heading|Gebete (Kurzübersicht)
+prayers.intro|Quelle:
+prayers.source|Quelle:
+contact.heading|Info
+contact.intro|Dieses Beichtfenster ist von keiner kirchlichen Autorität approbiert und wurde nicht zensiert. Beim Erstellen der Gewissenserforschung werden keine Daten auf dem Server abgelegt oder gespeichert; sie sind ausschließlich aus dem Cookie Ihres Browsers lesbar und werden mit dessen Löschung entfernt.
+questions.reset|Zurücksetzen
+questions.count|{n} angekreuzt
+footer.note|Nicht zensiert, nicht korrekturgelesen, Verwendung auf eigene Verantwortung. Wenn Sie Fehler finden oder Verbesserungen haben, schreiben Sie bitte an die im Bereich Info / Betreiber der Seite angegebene E-Mail (Klick).
+gender.label|Geschlecht
+gender.choose|Bitte wählen
+gender.m|Mann
+gender.f|Frau
+last.label|Letzte Beichte
+last.none|Letzte Beichte nicht erfasst
+last.since|{date} - {n} Tage
+last.clear|Löschen
+confession.heading|Beichtformel
+confession.intro|Die in der Gewissenserforschung angekreuzten Sünden. Es wird nichts versendet, alles bleibt in Ihrem Browser.
+confession.opening|Ich bekenne Gott dem Herrn und Ihnen, geistlicher Vater, dass ich seit meiner letzten heiligen Beichte, die {ago} war, folgende Sünden begangen habe:
+confession.nodate|(Datum nicht erfasst)
+confession.closing|An weitere Sünden erinnere ich mich nicht.
+confession.contrition.heading|Reuegebet
+confession.contrition|Mein Gott, ich will dich von ganzem Herzen lieben, und darum bereue ich zutiefst, dass ich dich durch meine Sünden beleidigt habe. Ich will mich wirklich bessern und mich vor der Sünde hüten. Gott Vater, vergib mir durch das Blut Christi.
+confession.none|Sie haben bisher nichts angekreuzt.
+confession.back|Zurück zur Gewissenserforschung

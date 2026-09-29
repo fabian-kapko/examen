@@ -1,0 +1,4 @@
+id|type|label|value|href
+c01|link|Nájsť miesto|Kde sa spovedať?|https://www.dokostola.sk/?den=dnes&typ=spovede
+c03|email|správa stránky|F. Kapko|examen@kapko.eu
+c04|text|Licencovanie softvéru|GNU GENERAL PUBLIC LICENSE,Version 3, 29 June 2007|https://github.com/fabian-kapko/examen/blob/main/LICENSE
