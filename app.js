@@ -437,7 +437,9 @@ function renderPrayers(rows, strings) {
     if (p.source) {
       var line = document.createElement('p');
       line.className = 'source';
-      line.appendChild(document.createTextNode((strings['prayers.source'] || '') + ' '));
+      /* The label is optional; without it the link stands alone, no stray space. */
+      var label = strings['prayers.source'] || '';
+      if (label) line.appendChild(document.createTextNode(label + ' '));
       line.appendChild(externalLink(p.source_url, p.source));
       sec.appendChild(line);
     }
