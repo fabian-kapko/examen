@@ -4,16 +4,16 @@ nav.index|Spytovanie
 nav.confession|Spoveď
 nav.prayers|Modlitby
 nav.contact|Info
-title.index|Spytovanie svedomia pred spoveďou
-title.confession|Formula spovede a zoznam hriechov
-title.prayers|Modlitby pred spoveďou
+title.index|Spovedné zrkadlo online - spytovanie svedomia
+title.confession|Spovedné okno - formula spovede a zoznam hriechov
+title.prayers|Modlitby pred svätou spoveďou
 title.contact|Info o spovednom zrkadle
-desc.index|Obsiahle katolícke spytovanie svedomia pred svätou spoveďou. 125 otázok, zaškrtnuté hriechy zostávajú len vo vašom prehliadači.
-desc.confession|Formula svätej spovede s automaticky doplneným dátumom poslednej spovede a so zoznamom hriechov, ktoré ste si zaškrtli.
-desc.prayers|Modlitba pred svätou spoveďou na rýchle nahliadnutie.
+desc.index|Spovedné zrkadlo online: obsiahle katolícke spytovanie svedomia pred svätou spoveďou. 125 otázok, zaškrtnuté hriechy zostávajú len vo vašom prehliadači.
+desc.confession|Spovedné okno online: formula svätej spovede s dátumom poslednej spovede a so zoznamom hriechov, ktoré ste si v spovednom zrkadle zaškrtli.
+desc.prayers|Modlitba pred svätou spoveďou a modlitba ľútosti na rýchle nahliadnutie.
 desc.contact|Kde sa vyspovedať, kontakt na správcu stránky a licencia softvéru.
-index.heading|Spytovanie svedomia
-index.intro|Obsiahle, katolícke spytovanie svedomia zostavené podľa Tractatus de sacramento poenitentiae. pozn. Spoveď online nikdy nie je platná.
+index.heading|Spovedné zrkadlo - spytovanie svedomia
+index.intro|Spovedné zrkadlo (spovedné okno) online: obsiahle, katolícke spytovanie svedomia zostavené podľa Tractatus de sacramento poenitentiae. pozn. Spoveď online nikdy nie je platná.
 index.goto|Pokračovať na spoveď
 prayers.heading|Modliby (quick reference)
 prayers.source|
@@ -30,7 +30,7 @@ last.label|Posledná spoveď
 last.none|Posledná spoveď nezaznamenaná
 last.since|{date} - {n} dní
 last.clear| Vymaž
-confession.heading|Formula spovede
+confession.heading|Spovedné okno - formula spovede
 confession.intro|Zoznam hriechov, ktoré ste zaškrtli pri spytovaní svedomia. Nič sa nikam neodosiela, všetko zostáva vo vašom prehliadači.
 confession.opening|Spovedám sa Pánu Bohu i vám duchovný otče, že som od poslednej svätej spovede ktorá bola {ago} spáchal tieto hriechy:
 confession.nodate|(dátum neuvedený)
