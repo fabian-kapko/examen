@@ -21,6 +21,8 @@ contact.heading|Info
 contact.intro|Dieses Beichtfenster ist von keiner kirchlichen Autorität approbiert und wurde nicht zensiert. Beim Erstellen der Gewissenserforschung werden keine Daten auf dem Server abgelegt oder gespeichert; sie sind ausschließlich aus dem Cookie Ihres Browsers lesbar und werden mit dessen Löschung entfernt.
 questions.reset|Zurücksetzen
 questions.count|{n} angekreuzt
+questions.note.label|Notiz
+questions.note.placeholder|Notiz hinzufügen (optional)
 footer.note|Nicht zensiert, nicht korrekturgelesen, Verwendung auf eigene Verantwortung. Wenn Sie Fehler finden oder Verbesserungen haben, schreiben Sie bitte an die im Bereich Info / Betreiber der Seite angegebene E-Mail (Klick).
 img.index.caption|Ein Büßender am Beichtstuhl, Stich aus dem 19. Jahrhundert
 img.prayers.caption|Das Sündenbekenntnis, Stich aus dem 19. Jahrhundert

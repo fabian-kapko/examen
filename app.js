@@ -9,6 +9,7 @@ var LANGS = [
 var DEFAULT_LANG = 'sk';
 var STORE_LANG = 'confession.lang';
 var STORE_MARKS = 'confession.marks';
+var STORE_NOTES = 'confession.notes';
 var STORE_GENDER = 'confession.gender';
 var STORE_LAST = 'confession.last';
 var STORE_DEPTH = 'confession.depth';
@@ -328,12 +329,21 @@ function saveMarks(marks) {
   write(STORE_MARKS, JSON.stringify(marks));
 }
 
+function loadNotes() {
+  try { return JSON.parse(read(STORE_NOTES, '{}')) || {}; } catch (e) { return {}; }
+}
+
+function saveNotes(notes) {
+  write(STORE_NOTES, JSON.stringify(notes));
+}
+
 /* ---------- pages ---------- */
 
 function renderQuestions(rows, strings) {
   var host = document.getElementById('questions');
   if (!host) return;
   var marks = loadMarks();
+  var notes = loadNotes();
   var gender = currentGender();
   host.innerHTML = '';
 
@@ -368,6 +378,13 @@ function renderQuestions(rows, strings) {
     text.className = 'qtext';
     text.textContent = q.question;
 
+    var note = document.createElement('textarea');
+    note.className = 'qnote-input';
+    note.rows = 2;
+    note.value = notes[q.id] || '';
+    note.placeholder = strings['questions.note.placeholder'] || '';
+    note.setAttribute('aria-label', strings['questions.note.label'] || '');
+
     box.addEventListener('change', function () {
       var m = loadMarks();
       if (box.checked) { m[q.id] = 1; } else { delete m[q.id]; }
@@ -375,9 +392,19 @@ function renderQuestions(rows, strings) {
       updateCount(strings);
     });
 
+    note.addEventListener('input', function () {
+      var n = loadNotes();
+      if (note.value) { n[q.id] = note.value; } else { delete n[q.id]; }
+      saveNotes(n);
+    });
+
     label.appendChild(box);
     label.appendChild(text);
     li.appendChild(label);
+    var noteWrap = document.createElement('div');
+    noteWrap.className = 'qnote';
+    noteWrap.appendChild(note);
+    li.appendChild(noteWrap);
     group.items.push(li);
   });
 
@@ -413,6 +440,7 @@ function wireReset(after) {
 
   reset.addEventListener('click', function () {
     saveMarks({});
+    saveNotes({});
     if (after) after();
   });
 }
@@ -462,6 +490,7 @@ function renderConfession(rows, strings) {
   if (!list) return;
 
   var marks = loadMarks();
+  var notes = loadNotes();
   list.innerHTML = '';
   var shown = 0;
 
@@ -469,6 +498,12 @@ function renderConfession(rows, strings) {
     if (!q.question || !marks[q.id]) return;
     var li = document.createElement('li');
     li.textContent = q.question;
+    if (notes[q.id]) {
+      var note = document.createElement('span');
+      note.className = 'sin-note';
+      note.textContent = notes[q.id];
+      li.appendChild(note);
+    }
     list.appendChild(li);
     shown++;
   });
@@ -586,6 +621,8 @@ function boot() {
         wireReset(function () {
           var boxes = document.querySelectorAll('#questions input[type="checkbox"]');
           for (var i = 0; i < boxes.length; i++) boxes[i].checked = false;
+          var notes = document.querySelectorAll('#questions .qnote-input');
+          for (var j = 0; j < notes.length; j++) notes[j].value = '';
           updateCount(strings);
         });
         setupLast(strings);

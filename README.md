@@ -58,6 +58,7 @@ source pack; en and de are translated from it and share its row ids.
     confession.depth   deep | quick, which question file the index loads
     confession.last    date of the last confession (YYYY-MM-DD)
     confession.marks   which questions are ticked
+    confession.notes   per-question notes
 
 ## Search engines
 

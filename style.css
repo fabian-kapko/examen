@@ -150,17 +150,20 @@ a { color: #000; }
 }
 
 /* Gender and scope sit side by side; they drop under each other when narrow. */
-.field-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 1rem;
-}
 
 .field label {
   flex: none;
+  min-width: 8rem;
   font-size: 0.8rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+}
+
+/* One width for all three controls, so the box reads as a single column. */
+.controls select,
+.controls input[type="date"] {
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 input[type="date"] {
@@ -213,6 +216,22 @@ ol.questions input[type="checkbox"] {
 
 .qtext { flex: 1; }
 
+.qnote {
+  padding: 0 0.25rem 0.9rem 2rem;
+}
+
+.qnote-input {
+  width: 100%;
+  font: inherit;
+  font-size: 0.9rem;
+  color: #000;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 0;
+  padding: 0.4rem 0.5rem;
+  resize: vertical;
+}
+
 /* Buttons */
 
 .actions {
@@ -254,6 +273,13 @@ ol.sins {
 }
 
 ol.sins li { margin-bottom: 0.5rem; font-weight: bold; }
+
+.sin-note {
+  display: block;
+  margin-top: 0.2rem;
+  font-weight: normal;
+  font-style: italic;
+}
 
 .go { margin: 2rem 0; }
 
@@ -309,9 +335,7 @@ body[data-page="confession"] .with-plate { align-items: center; }
    on one line and take the slack, the plate asks only for what it draws. */
 .with-plate > .controls,
 .with-plate > .stack { flex: 1 1 auto; margin-bottom: 0; }
-.with-plate > .plate { flex: 0 1 10rem; margin: 0; }
-
-body[data-page="index"] .with-plate .plate img { max-width: 10rem; }
+.with-plate > .plate { flex: 0 1 16rem; margin: 0; }
 
 /* The buttons keep their own spacing inside the row. */
 .stack > :first-child { margin-top: 0; }

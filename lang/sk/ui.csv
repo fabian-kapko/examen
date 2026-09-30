@@ -21,6 +21,8 @@ contact.heading|Info
 contact.intro|Toto spovedné okienko nie je schválené žiadnou cirkevnou autoritou a nebolo cenzurované. Pri generovaní spovede sa žiadne dáta nenachádzajú ani neukladajú na server, sú čítaeľné výlučne z cookie vášho prehliadača, teda po ich vymazaní budu odstránené.
 questions.reset|Reset
 questions.count|{n} zaškrtnutých
+questions.note.label|Poznámka
+questions.note.placeholder|Pridať poznámku (voliteľné)
 footer.note|Neprešlo cenzúrou, korektúrou, použitie na vlastnú zodpovednosť. Pri zistení chýb, zlepšení, prosím, napíšte email uvedený v sekcii info/správca stránky (klik).
 img.index.caption|Kajúcnik pri spovednici, rytina z 19. storočia
 img.prayers.caption|Vyznanie hriechov, rytina z 19. storočia
