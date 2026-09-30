@@ -30,8 +30,8 @@ gender.choose|Choose
 gender.m|Male
 gender.f|Female
 depth.label|Scope
-depth.deep|Thorough (125 questions)
-depth.quick|Quick (30 questions)
+depth.deep|Thorough (125)
+depth.quick|Quick (30)
 last.label|Last confession
 last.none|Last confession not recorded
 last.since|{date} - {n} days

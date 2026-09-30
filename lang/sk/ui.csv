@@ -30,8 +30,8 @@ gender.choose|Potvrď
 gender.m|Muž
 gender.f|Žena
 depth.label|Rozsah
-depth.deep|Podrobné (125 otázok)
-depth.quick|Rýchle (30 otázok)
+depth.deep|Podrobné (125)
+depth.quick|Rýchle (30)
 last.label|Posledná spoveď
 last.none|Posledná spoveď nezaznamenaná
 last.since|{date} - {n} dní

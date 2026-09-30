@@ -30,8 +30,8 @@ gender.choose|Bitte wählen
 gender.m|Mann
 gender.f|Frau
 depth.label|Umfang
-depth.deep|Ausführlich (125 Fragen)
-depth.quick|Kurz (30 Fragen)
+depth.deep|Ausführlich (125)
+depth.quick|Kurz (30)
 last.label|Letzte Beichte
 last.none|Letzte Beichte nicht erfasst
 last.since|{date} - {n} Tage
