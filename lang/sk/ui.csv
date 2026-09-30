@@ -13,7 +13,7 @@ desc.confession|Spovedné okno online: formula svätej spovede s dátumom posled
 desc.prayers|Modlitba pred svätou spoveďou a modlitba ľútosti na rýchle nahliadnutie.
 desc.contact|Kde sa vyspovedať, kontakt na správcu stránky a licencia softvéru.
 index.heading|Spovedné zrkadlo - spytovanie svedomia
-index.intro|Spovedné zrkadlo (spovedné okno) online: obsiahle, katolícke spytovanie svedomia zostavené podľa Tractatus de sacramento poenitentiae. pozn. Spoveď online nikdy nie je platná.
+index.intro|Obsiahle, katolícke spytovanie svedomia zostavené podľa Tractatus de sacramento poenitentiae. pozn. Spoveď online nikdy nie je platná.
 index.goto|Pokračovať na spoveď
 prayers.heading|Modliby (quick reference)
 prayers.source|
@@ -26,6 +26,9 @@ gender.label|Pohlavie
 gender.choose|Potvrď
 gender.m|Muž
 gender.f|Žena
+depth.label|Rozsah
+depth.deep|Podrobné (125 otázok)
+depth.quick|Rýchle (30 otázok)
 last.label|Posledná spoveď
 last.none|Posledná spoveď nezaznamenaná
 last.since|{date} - {n} dní

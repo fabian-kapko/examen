@@ -1,5 +1,44 @@
 /* Black & white, minimal. */
 
+/* EB Garamond, self-hosted: no request ever leaves the reader's browser.
+   These are Google's variable woff2 files, so one file covers 400-800. */
+
+@font-face {
+  font-family: "EB Garamond";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url(fonts/ebgaramond-ext.woff2) format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url(fonts/ebgaramond.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  font-style: italic;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url(fonts/ebgaramond-italic-ext.woff2) format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  font-style: italic;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url(fonts/ebgaramond-italic.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 * { box-sizing: border-box; }
 
 html { -webkit-text-size-adjust: 100%; }
@@ -8,8 +47,8 @@ body {
   margin: 0;
   background: #fff;
   color: #000;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 17px;
+  font-family: "EB Garamond", Garamond, Georgia, "Times New Roman", serif;
+  font-size: 19px;
   line-height: 1.6;
 }
 
@@ -107,6 +146,13 @@ a { color: #000; }
   margin: 1rem 0 0;
 }
 
+/* Gender and scope sit side by side; they drop under each other when narrow. */
+.field-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.5rem;
+}
+
 .field label {
   flex: none;
   font-size: 0.8rem;
@@ -124,8 +170,6 @@ input[type="date"] {
   padding: 0.4rem 0.5rem;
   min-height: 2.5rem;
 }
-
-.controls .note { margin: 0.75rem 0 0; }
 
 /* Questions */
 
@@ -166,8 +210,6 @@ ol.questions input[type="checkbox"] {
 
 .qtext { flex: 1; }
 
-input:checked ~ .qtext { text-decoration: line-through; }
-
 /* Buttons */
 
 .actions {
@@ -195,10 +237,12 @@ button:hover { background: #000; color: #fff; }
 
 /* Confession */
 
+/* Bold is what you say out loud in the confessional. */
 .formula {
   border-left: 2px solid #000;
   padding-left: 1rem;
   margin: 1.5rem 0;
+  font-weight: bold;
 }
 
 ol.sins {
@@ -206,7 +250,7 @@ ol.sins {
   padding-left: 1.5rem;
 }
 
-ol.sins li { margin-bottom: 0.5rem; }
+ol.sins li { margin-bottom: 0.5rem; font-weight: bold; }
 
 .go { margin: 2rem 0; }
 
@@ -255,6 +299,8 @@ footer {
 
 .note { font-size: 0.85rem; }
 
+body[data-page="confession"] .note { font-style: italic; }
+
 @media (max-width: 30rem) {
-  body { font-size: 16px; }
+  body { font-size: 18px; }
 }

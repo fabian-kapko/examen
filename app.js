@@ -11,9 +11,18 @@ var STORE_LANG = 'confession.lang';
 var STORE_MARKS = 'confession.marks';
 var STORE_GENDER = 'confession.gender';
 var STORE_LAST = 'confession.last';
+var STORE_DEPTH = 'confession.depth';
 var DELIM = '|';
 
 var GENDERS = ['m', 'f'];
+
+/* Two examinations: the full one, and a short list of the essentials.
+   The quick file reuses ids from the deep one, so a tick survives a switch. */
+var DEPTHS = [
+  { code: 'deep', file: 'questions.csv' },
+  { code: 'quick', file: 'questions-quick.csv' }
+];
+var DEFAULT_DEPTH = 'deep';
 
 /* ---------- storage helpers (safe when disabled) ---------- */
 
@@ -182,6 +191,43 @@ function buildGenderPicker(strings, onChange) {
     if (!sel.value) return;
     write(STORE_GENDER, sel.value);
     if (sel.options[0] && !sel.options[0].value) sel.remove(0);
+    onChange();
+  });
+}
+
+/* ---------- depth (how long an examination) ---------- */
+
+function currentDepth() {
+  var wanted = read(STORE_DEPTH, DEFAULT_DEPTH);
+  for (var i = 0; i < DEPTHS.length; i++) {
+    if (DEPTHS[i].code === wanted) return wanted;
+  }
+  return DEFAULT_DEPTH;
+}
+
+function questionsFile(depth) {
+  for (var i = 0; i < DEPTHS.length; i++) {
+    if (DEPTHS[i].code === depth) return DEPTHS[i].file;
+  }
+  return DEPTHS[0].file;
+}
+
+function buildDepthPicker(strings, onChange) {
+  var sel = document.getElementById('depth');
+  if (!sel) return;
+  var current = currentDepth();
+  sel.innerHTML = '';
+
+  DEPTHS.forEach(function (d) {
+    var opt = document.createElement('option');
+    opt.value = d.code;
+    opt.textContent = strings['depth.' + d.code] || d.code;
+    if (d.code === current) opt.selected = true;
+    sel.appendChild(opt);
+  });
+
+  sel.addEventListener('change', function () {
+    write(STORE_DEPTH, sel.value);
     onChange();
   });
 }
@@ -391,6 +437,16 @@ function showOpening(strings) {
     .replace('{n}', n === null ? '' : n);
 }
 
+/* The reader may have ticked in either examination, so the confession page
+   reads both. Deep order wins; anything only in the quick file follows. */
+function mergeQuestions(deep, quick) {
+  var seen = {};
+  var out = [];
+  deep.forEach(function (q) { seen[q.id] = true; out.push(q); });
+  quick.forEach(function (q) { if (!seen[q.id]) out.push(q); });
+  return out;
+}
+
 /* The confession page: the formula, plus every question the reader ticked.
    Marks are keyed by id, so the rows are listed in questions.csv order. */
 function renderConfession(rows, strings) {
@@ -507,19 +563,38 @@ function boot() {
     applyUi(strings);
 
     if (page === 'index') {
-      return loadCsv(base + 'questions.csv').then(function (q) {
-        renderQuestions(q, strings);
+      var rows = [];
+
+      var show = function () { renderQuestions(rows, strings); };
+
+      /* Each depth is its own file, fetched when the reader asks for it. */
+      var loadDepth = function () {
+        return loadCsv(base + questionsFile(currentDepth())).then(function (q) {
+          rows = q;
+          show();
+        });
+      };
+
+      return loadDepth().then(function () {
         wireReset(function () {
           var boxes = document.querySelectorAll('#questions input[type="checkbox"]');
           for (var i = 0; i < boxes.length; i++) boxes[i].checked = false;
           updateCount(strings);
         });
         setupLast(strings);
-        buildGenderPicker(strings, function () { renderQuestions(q, strings); });
+        buildGenderPicker(strings, show);
+        buildDepthPicker(strings, function () {
+          loadDepth().catch(function (err) { fail(String(err.message || err)); });
+        });
       });
     }
     if (page === 'confession') {
-      return loadCsv(base + 'questions.csv').then(function (q) {
+      return Promise.all([
+        loadCsv(base + 'questions.csv'),
+        /* A missing quick file must not hide the sins from the deep one. */
+        loadCsv(base + 'questions-quick.csv').catch(function () { return []; })
+      ]).then(function (sets) {
+        var q = mergeQuestions(sets[0], sets[1]);
         renderConfession(q, strings);
         showOpening(strings);
         showLast(strings);

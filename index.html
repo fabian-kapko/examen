@@ -75,16 +75,20 @@
     <p id="error" class="note" hidden></p>
 
     <div class="controls">
-      <p class="field">
-        <label for="gender" data-i18n="gender.label">Pohlavie</label>
-        <select id="gender"></select>
-      </p>
+      <div class="field-row">
+        <p class="field">
+          <label for="gender" data-i18n="gender.label">Pohlavie</label>
+          <select id="gender"></select>
+        </p>
+        <p class="field">
+          <label for="depth" data-i18n="depth.label">Rozsah</label>
+          <select id="depth"></select>
+        </p>
+      </div>
       <p class="field">
         <label for="last" data-i18n="last.label">Posledná spoveď</label>
         <input type="date" id="last">
-        <button type="button" id="last-clear" data-i18n="last.clear"> Vymaž</button>
       </p>
-      <p class="note" id="since"></p>
     </div>
 
     <div id="questions"></div>

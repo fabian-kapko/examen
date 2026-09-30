@@ -13,7 +13,7 @@ desc.confession|Die Beichtformel mit eingesetztem Datum der letzten Beichte und 
 desc.prayers|Das Gebet vor der heiligen Beichte und das Reuegebet zum schnellen Nachschlagen.
 desc.contact|Wo man beichten kann, Kontakt zum Betreiber der Seite und die Softwarelizenz.
 index.heading|Beichtspiegel - Gewissenserforschung
-index.intro|Beichtspiegel online: ausführliche katholische Gewissenserforschung, zusammengestellt nach dem Tractatus de sacramento poenitentiae. Hinweis: Eine Beichte online ist niemals gültig.
+index.intro|Eine ausführliche katholische Gewissenserforschung, zusammengestellt nach dem Tractatus de sacramento poenitentiae. Hinweis: Eine Beichte online ist niemals gültig.
 index.goto|Weiter zur Beichte
 prayers.heading|Gebete (Kurzübersicht)
 prayers.source|Quelle:
@@ -26,6 +26,9 @@ gender.label|Geschlecht
 gender.choose|Bitte wählen
 gender.m|Mann
 gender.f|Frau
+depth.label|Umfang
+depth.deep|Ausführlich (125 Fragen)
+depth.quick|Kurz (30 Fragen)
 last.label|Letzte Beichte
 last.none|Letzte Beichte nicht erfasst
 last.since|{date} - {n} Tage
