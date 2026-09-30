@@ -216,6 +216,44 @@ ol.questions input[type="checkbox"] {
 
 .qtext { flex: 1; }
 
+/* The question and its note button share a line. */
+.qrow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.qrow label { flex: 1; }
+
+.qnote-toggle {
+  flex: none;
+  width: 2.25rem;
+  min-height: 2.25rem;
+  margin-top: 0.75rem;
+  padding: 0;
+  font: inherit;
+  line-height: 1;
+  color: #000;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.qnote-toggle svg {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0 auto;
+  fill: currentColor;
+}
+
+.qnote-toggle:hover { background: #000; color: #fff; }
+
+/* Filled means there is a note behind it. */
+.qnote-toggle.has-note { background: #000; color: #fff; }
+.qnote-toggle.has-note:hover { background: #fff; color: #000; }
+
 .qnote {
   padding: 0 0.25rem 0.9rem 2rem;
 }

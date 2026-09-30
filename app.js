@@ -17,6 +17,16 @@ var DELIM = '|';
 
 var GENDERS = ['m', 'f'];
 
+/* Material Design Icons, inlined so the page fetches nothing from a CDN:
+   pencil-plus-outline to open a note, pencil-minus-outline to close it. */
+var ICON_NOTE_OPEN = 'M14.1,9L15,9.9L5.9,19H5V18.1L14.1,9M17.7,3C17.5,3 17.2,3.1 17,3.3L15.2,5.1L18.9,8.9L20.7,7C21.1,6.6 21.1,6 20.7,5.6L18.4,3.3C18.2,3.1 17.9,3 17.7,3M14.1,6.2L3,17.2V21H6.8L17.8,9.9L14.1,6.2M7,2V5H10V7H7V10H5V7H2V5H5V2H7Z';
+var ICON_NOTE_CLOSE = 'M14.1,9L15,9.9L5.9,19H5V18.1L14.1,9M17.7,3C17.5,3 17.2,3.1 17,3.3L15.2,5.1L18.9,8.9L20.7,7C21.1,6.6 21.1,6 20.7,5.6L18.4,3.3C18.2,3.1 17.9,3 17.7,3M14.1,6.2L3,17.2V21H6.8L17.8,9.9L14.1,6.2M10,5V7H2V5H10Z';
+
+function noteIcon(d) {
+  return '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">'
+    + '<path d="' + d + '"/></svg>';
+}
+
 /* Two examinations: the full one, and a short list of the essentials.
    The quick file reuses ids from the deep one, so a tick survives a switch. */
 var DEPTHS = [
@@ -396,14 +406,50 @@ function renderQuestions(rows, strings) {
       var n = loadNotes();
       if (note.value) { n[q.id] = note.value; } else { delete n[q.id]; }
       saveNotes(n);
+      markNote();
+    });
+
+    var noteWrap = document.createElement('div');
+    noteWrap.className = 'qnote';
+    noteWrap.id = 'note-' + q.id;
+    noteWrap.hidden = true;
+    noteWrap.appendChild(note);
+
+    /* The button sits outside the label: inside it, a click would tick the box. */
+    var toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'qnote-toggle';
+    toggle.innerHTML = noteIcon(ICON_NOTE_OPEN);
+    var icon = toggle.querySelector('path');
+    toggle.title = strings['questions.note.label'] || '';
+    toggle.setAttribute('aria-label', toggle.title);
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-controls', noteWrap.id);
+
+    /* A written note shows on the closed button, so nothing is lost from sight. */
+    function markNote() {
+      if (note.value) { toggle.classList.add('has-note'); }
+      else { toggle.classList.remove('has-note'); }
+    }
+    markNote();
+
+    toggle.addEventListener('click', function () {
+      var opening = noteWrap.hidden;
+      noteWrap.hidden = !opening;
+      toggle.setAttribute('aria-expanded', String(opening));
+      icon.setAttribute('d', opening ? ICON_NOTE_CLOSE : ICON_NOTE_OPEN);
+      if (opening) { note.focus(); }
     });
 
     label.appendChild(box);
     label.appendChild(text);
-    li.appendChild(label);
-    var noteWrap = document.createElement('div');
-    noteWrap.className = 'qnote';
-    noteWrap.appendChild(note);
+
+    var row = document.createElement('div');
+    row.className = 'qrow';
+    row.appendChild(label);
+    row.appendChild(toggle);
+
+    li.appendChild(row);
     li.appendChild(noteWrap);
     group.items.push(li);
   });
@@ -618,13 +664,7 @@ function boot() {
       };
 
       return loadDepth().then(function () {
-        wireReset(function () {
-          var boxes = document.querySelectorAll('#questions input[type="checkbox"]');
-          for (var i = 0; i < boxes.length; i++) boxes[i].checked = false;
-          var notes = document.querySelectorAll('#questions .qnote-input');
-          for (var j = 0; j < notes.length; j++) notes[j].value = '';
-          updateCount(strings);
-        });
+        wireReset(show);
         setupLast(strings);
         buildGenderPicker(strings, show);
         buildDepthPicker(strings, function () {
