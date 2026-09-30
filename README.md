@@ -17,6 +17,7 @@ Pure HTML/CSS/JS, no build step, no dependencies.
     app.js           CSV parser, language packs, rendering
     style.css
     fonts/           EB Garamond woff2, self-hosted (no request to Google)
+    src/             the three engravings, one per page
     og-image.png     1200x630 link preview
     robots.txt, sitemap.xml, favicon.svg
 
@@ -27,6 +28,9 @@ Pure HTML/CSS/JS, no build step, no dependencies.
     lang/<code>/questions-quick.csv  same columns, the 30-question version
     lang/<code>/prayers.csv          id|title|text|source|source_url
     lang/<code>/contact.csv          id|type|label|value|href
+
+`data-i18n` fills an element's text from a ui.csv key, `data-i18n-alt` fills
+an image's alt from one (the `img.*` keys).
 
 Fields are pipe-separated, so commas need no escaping. Quote a field only if
 it holds a literal `|` or `"`, and double the quote to escape it:

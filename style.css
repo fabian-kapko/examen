@@ -264,6 +264,49 @@ ol.sins li { margin-bottom: 0.5rem; font-weight: bold; }
 
 .go-link:hover { background: #000; color: #fff; }
 
+/* Plates (the engravings) */
+
+.plate {
+  margin: 2.5rem 0;
+}
+
+.plate img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.plate figcaption {
+  font-size: 0.85rem;
+  font-style: italic;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Caps that only bite once a plate is on its own line: the prayers one always,
+   the tall Dore once it has dropped under the buttons. */
+body[data-page="prayers"] .plate img { max-width: 20rem; }
+body[data-page="confession"] .plate img { max-width: 18rem; }
+
+/* A block of controls with its plate alongside; the plate drops underneath
+   when there is no room for both. */
+.with-plate {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.with-plate > .controls,
+.with-plate > .stack { flex: 1 1 17rem; margin-bottom: 0; }
+.with-plate > .plate { flex: 1 1 13rem; margin: 0; }
+
+/* The buttons keep their own spacing inside the row. */
+.stack > :first-child { margin-top: 0; }
+.stack > :last-child { margin-bottom: 0; }
+
 /* Prayers */
 
 .prayer { margin-bottom: 2.5rem; }

@@ -113,6 +113,13 @@ function applyUi(strings) {
     if (strings[key] !== undefined) nodes[i].textContent = strings[key];
   }
 
+  /* Alt text is text too, so it comes from the pack like everything else. */
+  var images = document.querySelectorAll('[data-i18n-alt]');
+  for (var j = 0; j < images.length; j++) {
+    var alt = images[j].getAttribute('data-i18n-alt');
+    if (strings[alt] !== undefined) images[j].setAttribute('alt', strings[alt]);
+  }
+
   var page = document.body.getAttribute('data-page');
   var name = strings['app.name'];
   var title = strings['title.' + page];
