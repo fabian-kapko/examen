@@ -14,17 +14,19 @@ Pure HTML/CSS/JS, no build step, no dependencies.
     confession.html  the formula, with the ticked sins listed
     prayers.html
     contact.html
-    app.js           CSV parser, language packs, rendering
-    style.css
-    fonts/           EB Garamond woff2, self-hosted (no request to Google)
-    src/             the three engravings, one per page
-    og-image.png     1200x630 link preview
-    robots.txt, sitemap.xml, favicon.svg
+    robots.txt, sitemap.xml
+    src/             everything the pages load
+      app.js         CSV parser, language packs, rendering
+      style.css
+      fonts/         EB Garamond woff2, self-hosted (no request to Google)
+      p1-p3.webp     the three engravings, one per page
+      og-image.png   1200x630 link preview
+      favicon.svg
 
 ## Language packs
 
     lang/<code>/ui.csv               key|value, every interface string
-    lang/<code>/questions.csv        id|section|gender|question
+    lang/<code>/questions.csv        id|section|gender|question|description
     lang/<code>/questions-quick.csv  same columns, the 30-question version
     lang/<code>/prayers.csv          id|title|text|source|source_url
     lang/<code>/contact.csv          id|type|label|value|href
@@ -38,7 +40,9 @@ it holds a literal `|` or `"`, and double the quote to escape it:
 
 In questions.csv, fill `section` to start a new titled block and leave it
 blank to stay in the current one. A row with a section and no question is a
-heading on its own. `gender` is `m`, `f`, or blank for both.
+heading on its own. `gender` is `m`, `f`, or blank for both. `description` is
+optional; fill it and that question gets an information button beside its note
+button, which opens the text. Leave it empty and no button appears.
 
 questions-quick.csv reuses ids from questions.csv, so a tick survives a switch
 between the two. The confession page reads both and merges them by id, which

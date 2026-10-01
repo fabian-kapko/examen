@@ -225,7 +225,8 @@ ol.questions input[type="checkbox"] {
 
 .qrow label { flex: 1; }
 
-.qnote-toggle {
+.qnote-toggle,
+.qinfo-toggle {
   flex: none;
   width: 2.25rem;
   min-height: 2.25rem;
@@ -240,7 +241,8 @@ ol.questions input[type="checkbox"] {
   cursor: pointer;
 }
 
-.qnote-toggle svg {
+.qnote-toggle svg,
+.qinfo-toggle svg {
   display: block;
   width: 1.25rem;
   height: 1.25rem;
@@ -248,14 +250,22 @@ ol.questions input[type="checkbox"] {
   fill: currentColor;
 }
 
-.qnote-toggle:hover { background: #000; color: #fff; }
+.qnote-toggle:hover,
+.qinfo-toggle:hover { background: #000; color: #fff; }
 
 /* Filled means there is a note behind it. */
 .qnote-toggle.has-note { background: #000; color: #fff; }
 .qnote-toggle.has-note:hover { background: #fff; color: #000; }
 
-.qnote {
+.qnote,
+.qinfo {
   padding: 0 0.25rem 0.9rem 2rem;
+}
+
+/* The explanation is read, not written in: set apart from the question. */
+.qinfo {
+  font-size: 0.9rem;
+  font-style: italic;
 }
 
 .qnote-input {
