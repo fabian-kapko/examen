@@ -19,6 +19,9 @@ Pure HTML/CSS/JS, no build step, no dependencies.
       app.js         CSV parser, language packs, rendering
       style.css
       fonts/         EB Garamond woff2, self-hosted (no request to Google)
+      icons/         Material Design Icons as svg, used by style.css as
+                     masks painted with currentColor, so each one inverts
+                     with its button
       p1-p3.webp     the three engravings, one per page
       og-image.png   1200x630 link preview
       favicon.svg

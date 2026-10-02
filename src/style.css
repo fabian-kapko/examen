@@ -132,13 +132,30 @@ header .wrap { padding-bottom: 0; }
 
 #theme:hover { background: var(--fg); color: var(--bg); }
 
-#theme svg {
+/* Material Design Icons, served from src/icons. They are used as masks and
+   painted with currentColor, so every icon inverts with its button. */
+#theme::before,
+.qnote-toggle::before,
+.qinfo-toggle::before {
+  content: "";
   display: block;
   width: 1.25rem;
   height: 1.25rem;
   margin: 0 auto;
-  fill: currentColor;
+  background: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
 }
+
+/* The theme button shows where the switch leads, not where you are. */
+#theme { --icon: url(icons/weather-night.svg); }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) #theme { --icon: url(icons/weather-sunny.svg); }
+}
+
+:root[data-theme="dark"] #theme { --icon: url(icons/weather-sunny.svg); }
+:root[data-theme="light"] #theme { --icon: url(icons/weather-night.svg); }
 
 select {
   font: inherit;
@@ -295,14 +312,11 @@ ol.questions input[type="checkbox"] {
   cursor: pointer;
 }
 
-.qnote-toggle svg,
-.qinfo-toggle svg {
-  display: block;
-  width: 1.25rem;
-  height: 1.25rem;
-  margin: 0 auto;
-  fill: currentColor;
-}
+/* The open/closed pair comes straight off aria-expanded, so the script
+   never has to swap an icon. */
+.qinfo-toggle { --icon: url(icons/information-slab-symbol.svg); }
+.qnote-toggle { --icon: url(icons/pencil-plus-outline.svg); }
+.qnote-toggle[aria-expanded="true"] { --icon: url(icons/pencil-minus-outline.svg); }
 
 .qnote-toggle:hover,
 .qinfo-toggle:hover { background: var(--fg); color: var(--bg); }
