@@ -19,6 +19,7 @@ prayers.source|
 contact.heading|Info
 contact.intro|Toto spovedné okienko nie je schválené žiadnou cirkevnou autoritou a nebolo cenzurované. Pri generovaní spovede sa žiadne dáta nenachádzajú ani neukladajú na server, sú čítaeľné výlučne z cookie vášho prehliadača, teda po ich vymazaní budu odstránené. Žiaden čítateľný obsah tejto aplikácie nebol generovaný jazykovým modelom.
 questions.reset|Reset
+print.label|Tlačiť
 questions.count|{n} zaškrtnutých
 questions.note.label|pozn.
 questions.note.placeholder|pridať pozn.

@@ -188,6 +188,43 @@ nav a {
 nav a:hover { border-bottom-color: var(--fg); }
 nav a.active { border-bottom-color: var(--fg); font-weight: bold; }
 
+.head-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.head-row h1 { flex: 1; }
+
+#print {
+  flex: none;
+  width: 2.5rem;
+  min-height: 2.5rem;
+  margin-top: 1.5rem;        /* sits on the heading's first line */
+  padding: 0;
+  font: inherit;
+  line-height: 1;
+  color: var(--fg);
+  background: var(--bg);
+  border: 1px solid var(--fg);
+  border-radius: 0;
+  cursor: pointer;
+  --icon: url(icons/printer.svg);
+}
+
+#print:hover { background: var(--fg); color: var(--bg); }
+
+#print::before {
+  content: "";
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0 auto;
+  background: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+}
+
 /* Text */
 
 h1 { font-size: 1.6rem; margin: 1.5rem 0 0.5rem; }
@@ -338,6 +375,8 @@ ol.questions input[type="checkbox"] {
 
 .qnote-input {
   width: 100%;
+  max-width: 100%;
+  max-height: 9rem;          /* resize: vertical can't drag it off the page */
   font: inherit;
   font-size: 0.9rem;
   color: var(--fg);
@@ -346,6 +385,7 @@ ol.questions input[type="checkbox"] {
   border-radius: 0;
   padding: 0.4rem 0.5rem;
   resize: vertical;
+  overflow-wrap: anywhere;   /* an unbroken string wraps instead of overflowing */
 }
 
 /* Buttons */
@@ -395,6 +435,7 @@ ol.sins li { margin-bottom: 0.5rem; font-weight: bold; }
   margin-top: 0.2rem;
   font-weight: normal;
   font-style: italic;
+  overflow-wrap: anywhere;
 }
 
 .go { margin: 2rem 0; }
@@ -500,4 +541,78 @@ body[data-page="confession"] .note { font-style: italic; }
   /* Wrapped under the controls, a plate can use the whole column again. */
   .with-plate > .plate { flex-basis: 100%; }
   body[data-page="index"] .with-plate .plate img { max-width: 100%; }
+}
+
+/* ---------- print ----------
+
+   The confession page is meant to be carried into the confessional, so paper
+   gets only what is read there: the formula, the sins, the act of contrition.
+   Nothing here touches the screen layout. */
+
+@page {
+  margin: 18mm 16mm;
+}
+
+@media print {
+  /* Ink is black on white whatever theme the screen was showing. */
+  :root,
+  :root[data-theme="dark"],
+  :root[data-theme="light"] {
+    color-scheme: light;
+    --bg: #fff;
+    --fg: #000;
+  }
+
+  body {
+    font-size: 11pt;
+    line-height: 1.45;
+    padding: 0;
+    orphans: 2;
+    widows: 2;
+  }
+
+  .wrap { max-width: none; margin: 0; padding: 0; }
+
+  /* Screen furniture, navigation and anything that only works by clicking. */
+  header,
+  .lead,
+  #error,
+  .actions,
+  .go,
+  .plate,
+  .head-row #print,
+  footer,
+  noscript { display: none !important; }
+
+  h1 {
+    font-size: 15pt;
+    margin: 0 0 1.25rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--fg);
+  }
+
+  /* The date of the last confession belongs on the sheet; it is read aloud. */
+  #since {
+    margin: 0 0 1rem;
+    font-size: 9.5pt;
+    font-style: italic;
+  }
+
+  .formula {
+    border-left: 1px solid var(--fg);
+    padding-left: 0.7rem;
+    margin: 1rem 0;
+    break-inside: avoid;
+  }
+
+  ol.sins { margin: 1rem 0 1.25rem; }
+
+  /* A sin and its note must not be split across two pages. */
+  ol.sins li {
+    margin-bottom: 0.35rem;
+    break-inside: avoid;
+  }
+
+  .prayer { break-inside: avoid; }
+  .prayer h2 { font-size: 12pt; margin: 1.5rem 0 0.4rem; }
 }

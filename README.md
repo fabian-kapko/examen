@@ -67,6 +67,18 @@ source pack; en and de are translated from it and share its row ids.
     confession.marks   which questions are ticked
     confession.notes   per-question notes
 
+## Printing
+
+`confession.html` carries a print button beside its heading. The `@media print`
+block in style.css strips the header, nav, intro, buttons, plate and footer, and
+forces black on white so a page printed from dark mode is not a black rectangle.
+What reaches paper is the formula, the date of the last confession, the numbered
+sins with their notes, and the act of contrition. Nothing in that block touches
+the screen layout.
+
+Notes are capped at `NOTE_MAXLENGTH` in app.js (300 characters) and the textarea
+is bounded in height, so a long note cannot push the page out of shape.
+
 ## Search engines
 
 Every page ships a static Slovak title, description and body text, so a

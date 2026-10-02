@@ -26,6 +26,9 @@ var DEPTHS = [
 ];
 var DEFAULT_DEPTH = 'deep';
 
+/* A note is a prompt for the confessional, not an essay. */
+var NOTE_MAXLENGTH = 300;
+
 /* ---------- storage helpers (safe when disabled) ---------- */
 
 function read(key, fallback) {
@@ -190,6 +193,22 @@ function setupTheme(strings) {
   } catch (e) { /* older browsers simply do not follow along */ }
 
   applyTheme(strings);
+}
+
+/* ---------- print ---------- */
+
+/* Only the confession page carries the button; the rest get nothing to wire. */
+function setupPrint(strings) {
+  var button = document.getElementById('print');
+  if (!button) return;
+
+  var label = strings['print.label'] || '';
+  button.title = label;
+  button.setAttribute('aria-label', label);
+
+  button.addEventListener('click', function () {
+    window.print();
+  });
 }
 
 /* ---------- language switcher ---------- */
@@ -436,6 +455,7 @@ function renderQuestions(rows, strings) {
     var note = document.createElement('textarea');
     note.className = 'qnote-input';
     note.rows = 2;
+    note.maxLength = NOTE_MAXLENGTH;
     note.value = notes[q.id] || '';
     note.placeholder = strings['questions.note.placeholder'] || '';
     note.setAttribute('aria-label', strings['questions.note.label'] || '');
@@ -719,6 +739,7 @@ function boot() {
     rows.forEach(function (r) { strings[r.key] = r.value; });
     applyUi(strings);
     setupTheme(strings);
+    setupPrint(strings);
 
     if (page === 'index') {
       var rows = [];

@@ -19,6 +19,7 @@ prayers.source|
 contact.heading|Info
 contact.intro|Dieses Beichtfenster ist von keiner kirchlichen Autorität approbiert und wurde nicht zensiert. Beim Erstellen der Gewissenserforschung werden keine Daten auf dem Server abgelegt oder gespeichert; sie sind ausschließlich aus dem Cookie Ihres Browsers lesbar und werden mit dessen Löschung entfernt. Kein lesbarer Inhalt dieser Anwendung wurde von einem Sprachmodell erzeugt.
 questions.reset|Zurücksetzen
+print.label|Drucken
 questions.count|{n} angekreuzt
 questions.note.label|Anm.
 questions.note.placeholder|Anm. hinzufügen
