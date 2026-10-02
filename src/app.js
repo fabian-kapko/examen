@@ -13,14 +13,18 @@ var STORE_NOTES = 'confession.notes';
 var STORE_GENDER = 'confession.gender';
 var STORE_LAST = 'confession.last';
 var STORE_DEPTH = 'confession.depth';
+var STORE_THEME = 'confession.theme';
 var DELIM = '|';
 
 var GENDERS = ['m', 'f'];
 
 /* Material Design Icons, inlined so the page fetches nothing from a CDN:
    pencil-plus-outline / pencil-minus-outline for a note,
-   information-slab-symbol for a question that carries an explanation. */
+   information-slab-symbol for a question that carries an explanation,
+   weather-night / weather-sunny for the dark mode toggle. */
 var ICON_NOTE_OPEN = 'M14.1,9L15,9.9L5.9,19H5V18.1L14.1,9M17.7,3C17.5,3 17.2,3.1 17,3.3L15.2,5.1L18.9,8.9L20.7,7C21.1,6.6 21.1,6 20.7,5.6L18.4,3.3C18.2,3.1 17.9,3 17.7,3M14.1,6.2L3,17.2V21H6.8L17.8,9.9L14.1,6.2M7,2V5H10V7H7V10H5V7H2V5H5V2H7Z';
+var ICON_DARK = 'M17.75,4.09L15.22,6.03L16.13,9.09L13.5,7.28L10.87,9.09L11.78,6.03L9.25,4.09L12.44,4L13.5,1L14.56,4L17.75,4.09M21.25,11L19.61,12.25L20.2,14.23L18.5,13.06L16.8,14.23L17.39,12.25L15.75,11L17.81,10.95L18.5,9L19.19,10.95L21.25,11M18.97,15.95C19.8,15.87 20.69,17.05 20.16,17.8C19.84,18.25 19.5,18.67 19.08,19.07C15.17,23 8.84,23 4.94,19.07C1.03,15.17 1.03,8.83 4.94,4.93C5.34,4.53 5.76,4.17 6.21,3.85C6.96,3.32 8.14,4.21 8.06,5.04C7.79,7.9 8.75,10.87 10.95,13.06C13.14,15.26 16.1,16.22 18.97,15.95M17.33,17.97C14.5,17.81 11.7,16.64 9.53,14.5C7.36,12.31 6.2,9.5 6.04,6.68C3.23,9.82 3.34,14.64 6.35,17.66C9.37,20.67 14.19,20.78 17.33,17.97Z';
+var ICON_LIGHT = 'M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,2L14.39,5.42C13.65,5.15 12.84,5 12,5C11.16,5 10.35,5.15 9.61,5.42L12,2M3.34,7L7.5,6.65C6.9,7.16 6.36,7.78 5.94,8.5C5.5,9.24 5.25,10 5.11,10.79L3.34,7M3.36,17L5.12,13.23C5.26,14 5.53,14.78 5.95,15.5C6.37,16.24 6.91,16.86 7.5,17.37L3.36,17M20.65,7L18.88,10.79C18.74,10 18.47,9.23 18.05,8.5C17.63,7.78 17.1,7.15 16.5,6.64L20.65,7M20.64,17L16.5,17.36C17.09,16.85 17.62,16.22 18.04,15.5C18.46,14.77 18.73,14 18.87,13.21L20.64,17M12,22L9.59,18.56C10.33,18.83 11.14,19 12,19C12.82,19 13.63,18.83 14.37,18.56L12,22Z';
 var ICON_INFO = 'M13 9H11V7H13V9M14 15V17H10V15H11V13H10V11H13V15H14Z';
 var ICON_NOTE_CLOSE = 'M14.1,9L15,9.9L5.9,19H5V18.1L14.1,9M17.7,3C17.5,3 17.2,3.1 17,3.3L15.2,5.1L18.9,8.9L20.7,7C21.1,6.6 21.1,6 20.7,5.6L18.4,3.3C18.2,3.1 17.9,3 17.7,3M14.1,6.2L3,17.2V21H6.8L17.8,9.9L14.1,6.2M10,5V7H2V5H10Z';
 
@@ -147,6 +151,61 @@ function applyUi(strings) {
   setMeta('meta[property="og:title"]', document.title);
 
   document.documentElement.lang = currentLang();
+}
+
+/* ---------- theme ---------- */
+
+/* '' means follow the operating system, which is the default. */
+function storedTheme() {
+  var t = read(STORE_THEME, '');
+  return (t === 'dark' || t === 'light') ? t : '';
+}
+
+/* What the page is actually showing right now. */
+function activeTheme() {
+  var chosen = storedTheme();
+  if (chosen) return chosen;
+  try {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  } catch (e) {
+    return 'light';
+  }
+}
+
+function applyTheme(strings) {
+  var chosen = storedTheme();
+  var root = document.documentElement;
+  if (chosen) { root.setAttribute('data-theme', chosen); }
+  else { root.removeAttribute('data-theme'); }
+
+  var button = document.getElementById('theme');
+  if (!button) return;
+
+  /* The icon shows where the switch leads, not where you are. */
+  var goingDark = activeTheme() === 'light';
+  button.innerHTML = noteIcon(goingDark ? ICON_DARK : ICON_LIGHT);
+  var label = strings[goingDark ? 'theme.dark' : 'theme.light'] || '';
+  button.title = label;
+  button.setAttribute('aria-label', label);
+}
+
+function setupTheme(strings) {
+  var button = document.getElementById('theme');
+  if (!button) return;
+
+  button.addEventListener('click', function () {
+    write(STORE_THEME, activeTheme() === 'dark' ? 'light' : 'dark');
+    applyTheme(strings);
+  });
+
+  /* Follow the system while the reader has expressed no preference. */
+  try {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () {
+      if (!storedTheme()) applyTheme(strings);
+    });
+  } catch (e) { /* older browsers simply do not follow along */ }
+
+  applyTheme(strings);
 }
 
 /* ---------- language switcher ---------- */
@@ -679,6 +738,7 @@ function boot() {
     var strings = {};
     rows.forEach(function (r) { strings[r.key] = r.value; });
     applyUi(strings);
+    setupTheme(strings);
 
     if (page === 'index') {
       var rows = [];

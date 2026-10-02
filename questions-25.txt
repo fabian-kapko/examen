@@ -1,0 +1,30 @@
+001Pri spovedi som zamlčal ťažký hriech? (Aký?)
+003Prijal som v ťažkom hriechu sv. prijímanie alebo sviatost?
+006Bol som nábožensky ľahostajný?
+014Prehrešil som sa poverou, veštením, vykladaním kariet, špiritizmom, mágiou, astrológiou, využívaním horoskopov, talizmanov, homeopatiou a pod.?
+015Pri modlitbe som bol dobrovoľne roztržitý?
+021Venoval som celkovo vo svojom živote viac pozornosti svetu než Bohu, viac telu než duši, viac majetku než veciam duchovným?
+022Bral som meno Božie nadarmo?
+024Nadával som a zlorečil som?
+030Zanedbal som vlastnou vinou svätú omšu v nedeľu alebo prikázaný sviatok?
+034Bol som neúctivý k mame, k otcovi, učiteľom či predstaveným?
+039Nežili sme ako manželia v láske, svornosti a kresťanskej počestnosti?
+042Škodil som svojmu zdraviu nemiernosťou? (napr. v jedle, pitífajčením, alkoholom, drogami, gamblerstvom, inak....)
+046Mrhal som časom? (napr. pri počítači, televízii...)
+051Žil som v nenávisti a nepriateľstve s blížnymi?
+054Bol som hnevlivý?
+058Vyhol som sa pomoci blížnemu v jeho skutočnej núdzi?
+060Mal som záľubu v nečistých myšlienkach a predstavách?
+061Vzbudzoval som dobrovoľne nečisté predstavy a pocity? (napr. čítaním nemravných kníh, počúvaním nečistých rečí, pomocou pornografie, internetu, kontaktov na sociálnych sieťach, ap.)
+068Dopustil som sa nečistých skutkov sám na sebe? (hriešne dotyky, dokonané sebaukájanie)
+069Dopustil som sa nečistých skutkov s inými osobami?
+073Mal som nedovolenú žiadostivosť po cudzom majetku?
+074Prisvojil som si cudzí majetok tajne, krádežou, lúpežou? (Komu, čo a kde?)
+080Neplnil som voči zamestnávateľovi dohodnuté pracovné povinnosti?
+087Klamal som na škodu blížneho?
+090Hovoril som bez potreby o chybách blížneho? (ohováranie)?
+106Nevykonal som aspoň raz ročne sv. spoveď?
+110Nabádal som iného na hriech?
+118Bol som pyšný / samoľúby? (na čo?)
+122Bol som závistlivý alebo škodoradostný?
+125Oddával som sa duchovnej a telesnej lenivosti?

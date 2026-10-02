@@ -1,4 +1,5 @@
 id|type|label|value|href
 c01|link|Find a place|Where to go to confession?|https://www.dokostola.sk/?den=dnes&typ=spovede
 c03|email|site administrator|F. Kapko|examen@kapko.eu
+c05|link|Website source code|github.com/fabian-kapko/examen|https://github.com/fabian-kapko/examen
 c04|text|Software licensing|GNU GENERAL PUBLIC LICENSE,Version 3, 29 June 2007|https://github.com/fabian-kapko/examen/blob/main/LICENSE

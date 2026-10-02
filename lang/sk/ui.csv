@@ -1,39 +1,38 @@
 key|value
 app.name|Examen
+theme.dark|tmavý
+theme.light|svetlý
 nav.index|Spytovanie
 nav.confession|Spoveď
 nav.prayers|Modlitby
 nav.contact|Info
-title.index|Spovedné zrkadlo online - spytovanie svedomia
-title.confession|Spovedné okno - formula spovede a zoznam hriechov
-title.prayers|Modlitby pred svätou spoveďou
-title.contact|Info o spovednom zrkadle
-desc.index|Spovedné zrkadlo online: obsiahle katolícke spytovanie svedomia pred svätou spoveďou. 125 otázok, zaškrtnuté hriechy zostávajú len vo vašom prehliadači.
-desc.confession|Spovedné okno online: formula svätej spovede s dátumom poslednej spovede a so zoznamom hriechov, ktoré ste si v spovednom zrkadle zaškrtli.
-desc.prayers|Modlitba pred svätou spoveďou a modlitba ľútosti na rýchle nahliadnutie.
+title.index|Spovedné zrkadlo online
+title.confession|Spovedné okno
+title.prayers|Modlitby
+title.contact|Info
 desc.contact|Kde sa vyspovedať, kontakt na správcu stránky a licencia softvéru.
-index.heading|Spovedné zrkadlo - spytovanie svedomia
+index.heading|Spovedné zrkadlo 
 index.intro|Obsiahle, katolícke spytovanie svedomia zostavené podľa Tractatus de sacramento poenitentiae. pozn. Spoveď online nikdy nie je platná.
 index.goto|Pokračovať na spoveď
 prayers.heading|Modliby (quick reference)
 prayers.source|
 contact.heading|Info
-contact.intro|Toto spovedné okienko nie je schválené žiadnou cirkevnou autoritou a nebolo cenzurované. Pri generovaní spovede sa žiadne dáta nenachádzajú ani neukladajú na server, sú čítaeľné výlučne z cookie vášho prehliadača, teda po ich vymazaní budu odstránené.
+contact.intro|Toto spovedné okienko nie je schválené žiadnou cirkevnou autoritou a nebolo cenzurované. Pri generovaní spovede sa žiadne dáta nenachádzajú ani neukladajú na server, sú čítaeľné výlučne z cookie vášho prehliadača, teda po ich vymazaní budu odstránené. Žiaden čítateľný obsah tejto aplikácie nebol generovaný jazykovým modelom.
 questions.reset|Reset
 questions.count|{n} zaškrtnutých
-questions.note.label|Poznámka
-questions.note.placeholder|Pridať poznámku (voliteľné)
-questions.info.label|Vysvetlenie
-footer.note|Neprešlo cenzúrou, korektúrou, použitie na vlastnú zodpovednosť. Pri zistení chýb, zlepšení, prosím, napíšte email uvedený v sekcii info/správca stránky (klik).
-img.index.caption|Kajúcnik pri spovednici, rytina z 19. storočia
-img.prayers.caption|Vyznanie hriechov, rytina z 19. storočia
-img.confession.caption|Gustave Doré: Posledný súd
+questions.note.label|pozn.
+questions.note.placeholder|pridať pozn.
+questions.info.label|výklad
+footer.note|Neprešlo cenzúrou, korektúrou, použitie na vlastnú zodpovednosť. Pri zistení chýb, zlepšení, prosím, napíšte email uvedený v sekcii info/správca stránky.
+img.index.caption|Kajúcnik pri spovednici [ilustrácia]. [19. stor.?][nezn. aut.]
+img.prayers.caption|Vyznanie hriechov  [ilustrácia]. [19. stor.?][nezn. aut.]
+img.confession.caption|DORÉ, Gustave. Posledný súd [drevoryt]. In: La Sainte Bible selon la Vulgate. Zv. 2. Tours: Alfred Mame et fils, 1866.
 gender.label|Pohlavie
 gender.choose|Potvrď
 gender.m|Muž
 gender.f|Žena
 depth.label|Rozsah
-depth.deep|Podrobné (125)
+depth.deep|Detailné (125)
 depth.quick|Rýchle (30)
 last.label|Posledná spoveď
 last.none|Posledná spoveď nezaznamenaná

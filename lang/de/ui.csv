@@ -1,45 +1,44 @@
 key|value
 app.name|Examen
+theme.dark|dunkel
+theme.light|hell
 nav.index|Erforschung
 nav.confession|Beichte
 nav.prayers|Gebete
 nav.contact|Info
-title.index|Beichtspiegel online - Gewissenserforschung
-title.confession|Beichtformel und Sündenliste
-title.prayers|Gebete vor der heiligen Beichte
-title.contact|Über diesen Beichtspiegel
-desc.index|Beichtspiegel online: ausführliche katholische Gewissenserforschung vor der heiligen Beichte. 125 Fragen; die angekreuzten Sünden bleiben nur in Ihrem Browser.
-desc.confession|Die Beichtformel mit eingesetztem Datum der letzten Beichte und der Liste der angekreuzten Sünden.
-desc.prayers|Das Gebet vor der heiligen Beichte und das Reuegebet zum schnellen Nachschlagen.
+title.index|Beichtspiegel online
+title.confession|Beichtfenster
+title.prayers|Gebete
+title.contact|Info
 desc.contact|Wo man beichten kann, Kontakt zum Betreiber der Seite und die Softwarelizenz.
-index.heading|Beichtspiegel - Gewissenserforschung
+index.heading|Beichtspiegel
 index.intro|Eine ausführliche katholische Gewissenserforschung, zusammengestellt nach dem Tractatus de sacramento poenitentiae. Hinweis: Eine Beichte online ist niemals gültig.
 index.goto|Weiter zur Beichte
 prayers.heading|Gebete (Kurzübersicht)
-prayers.source|Quelle:
+prayers.source|
 contact.heading|Info
-contact.intro|Dieses Beichtfenster ist von keiner kirchlichen Autorität approbiert und wurde nicht zensiert. Beim Erstellen der Gewissenserforschung werden keine Daten auf dem Server abgelegt oder gespeichert; sie sind ausschließlich aus dem Cookie Ihres Browsers lesbar und werden mit dessen Löschung entfernt.
+contact.intro|Dieses Beichtfenster ist von keiner kirchlichen Autorität approbiert und wurde nicht zensiert. Beim Erstellen der Gewissenserforschung werden keine Daten auf dem Server abgelegt oder gespeichert; sie sind ausschließlich aus dem Cookie Ihres Browsers lesbar und werden mit dessen Löschung entfernt. Kein lesbarer Inhalt dieser Anwendung wurde von einem Sprachmodell erzeugt.
 questions.reset|Zurücksetzen
 questions.count|{n} angekreuzt
-questions.note.label|Notiz
-questions.note.placeholder|Notiz hinzufügen (optional)
-questions.info.label|Erläuterung
-footer.note|Nicht zensiert, nicht korrekturgelesen, Verwendung auf eigene Verantwortung. Wenn Sie Fehler finden oder Verbesserungen haben, schreiben Sie bitte an die im Bereich Info / Betreiber der Seite angegebene E-Mail (Klick).
-img.index.caption|Ein Büßender am Beichtstuhl, Stich aus dem 19. Jahrhundert
-img.prayers.caption|Das Sündenbekenntnis, Stich aus dem 19. Jahrhundert
-img.confession.caption|Gustave Doré: Das Jüngste Gericht
+questions.note.label|Anm.
+questions.note.placeholder|Anm. hinzufügen
+questions.info.label|Auslegung
+footer.note|Nicht zensiert, nicht korrekturgelesen, Verwendung auf eigene Verantwortung. Wenn Sie Fehler finden oder Verbesserungen haben, schreiben Sie bitte an die im Bereich Info / Betreiber der Seite angegebene E-Mail.
+img.index.caption|Ein Büßender am Beichtstuhl [Abbildung]. [19. Jh.?][unbek. Verf.]
+img.prayers.caption|Sündenbekenntnis [Abbildung]. [19. Jh.?][unbek. Verf.]
+img.confession.caption|DORÉ, Gustave. Das Jüngste Gericht [Holzstich]. In: La Sainte Bible selon la Vulgate. Bd. 2. Tours: Alfred Mame et fils, 1866.
 gender.label|Geschlecht
 gender.choose|Bitte wählen
 gender.m|Mann
 gender.f|Frau
 depth.label|Umfang
-depth.deep|Ausführlich (125)
-depth.quick|Kurz (30)
+depth.deep|Detailliert (125)
+depth.quick|Schnell (30)
 last.label|Letzte Beichte
 last.none|Letzte Beichte nicht erfasst
 last.since|{date} - {n} Tage
 last.clear|Löschen
-confession.heading|Beichtformel
+confession.heading|Beichtfenster - Beichtformel
 confession.intro|Die in der Gewissenserforschung angekreuzten Sünden. Es wird nichts versendet, alles bleibt in Ihrem Browser.
 confession.opening|Ich bekenne Gott dem Herrn und Ihnen, geistlicher Vater, dass ich seit meiner letzten heiligen Beichte, die {ago} war, folgende Sünden begangen habe:
 confession.nodate|(Datum nicht erfasst)
