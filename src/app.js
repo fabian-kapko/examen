@@ -1,8 +1,8 @@
 /* Language pack loader + page rendering. Plain ES5-ish, no dependencies. */
 
+/* Only Slovak for now; the en/de packs were removed. Add a code back here
+   together with its lang/<code>/ files and the switcher reappears. */
 var LANGS = [
-  { code: 'en', label: 'English' },
-  { code: 'de', label: 'Deutsch' },
   { code: 'sk', label: 'Slovenčina' }
 ];
 
@@ -216,6 +216,13 @@ function setupPrint(strings) {
 function buildSwitcher(lang) {
   var sel = document.getElementById('lang');
   if (!sel) return;
+  /* The markup ships hidden: nothing to switch between leaves the bar clean,
+     and no empty select flashes before this runs. */
+  if (LANGS.length < 2) {
+    sel.parentNode.removeChild(sel);
+    return;
+  }
+  sel.hidden = false;
   for (var i = 0; i < LANGS.length; i++) {
     var opt = document.createElement('option');
     opt.value = LANGS[i].code;

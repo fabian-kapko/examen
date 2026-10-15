@@ -369,7 +369,7 @@ ol.questions input[type="checkbox"] {
 
 /* The explanation is read, not written in: set apart from the question. */
 .qinfo {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-style: italic;
 }
 

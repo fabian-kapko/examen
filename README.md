@@ -54,13 +54,14 @@ also means a quick-only id still gets named.
 In contact.csv, `type` phone and email build tel:/mailto: from `href`, link
 opens `href` in a new tab, anything else ignores `href`.
 
-To add a language, copy `lang/en/`, translate the values, and add
-`{ code: '<code>', label: '<name>' }` to `LANGS` in `app.js`. `lang/sk` is the
-source pack; en and de are translated from it and share its row ids.
+Only `lang/sk` ships at the moment; the English and German packs were removed
+for now. To add a language, copy `lang/sk/`, translate the values, and add
+`{ code: '<code>', label: '<name>' }` to `LANGS` in `app.js` — the switcher
+hides itself while only one language is listed.
 
 ## localStorage
 
-    confession.lang    chosen language, `?lang=de` overrides it
+    confession.lang    chosen language, `?lang=sk` overrides it
     confession.gender  m | f, filters the questions
     confession.depth   deep | quick, which question file the index loads
     confession.last    date of the last confession (YYYY-MM-DD)
